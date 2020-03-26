@@ -1,7 +1,7 @@
 // Update with your config settings.
-
+// CONFIGURAÇÕES DE ACESSO AO BANCO DE DADOS P/ CADA UM DOS AMBIENTES DA APLICAÇÃO
 module.exports = {
-
+  //AMBIENTE DE DESENVOLVIMENTO
   development: {
     client: 'sqlite3',
     connection: {
@@ -12,7 +12,8 @@ module.exports = {
     },
     useNullAsDefault: true,
   },
-
+  
+  //AMBIENTE DE PRODUÇÃO PARA O TIME DE DESENVOLVIMENTO
   staging: {
     client: 'postgresql',
     connection: {
@@ -29,6 +30,7 @@ module.exports = {
     }
   },
 
+  //AMBIENTE DE PRODUÇÃO, QUANDO O PROJETO É POSTO ONLINE, PRA CLIENTES ACESSAREM A APLICAÇÃO
   production: {
     client: 'postgresql',
     connection: {

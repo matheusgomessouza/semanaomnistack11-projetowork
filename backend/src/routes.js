@@ -5,7 +5,7 @@ const IncidentController = require('./controllers/IncidentController');
 const ProfileController = require('./controllers/ProfileController');
 const SessionController = require('./controllers/SessionController');
 
-const routes = express.Router();
+const routes = express.Router(); /**DESACOPLANDO O 'MÓDULO DE 'ROTAS' DO EXPRESS EM UMA VARIÁVEL */
 
 routes.post('/sessions', SessionController.create);
 
@@ -18,4 +18,4 @@ routes.get('/incidents', IncidentController.index);
 routes.post('/incidents', IncidentController.create);
 routes.delete('/incidents/:id', IncidentController.delete);
 
-module.exports = routes;
+module.exports = routes; /**EXPORTANDO AS ROTAS */ /**Como exportamos uma variável dentro de um arquivo no NodeJS */

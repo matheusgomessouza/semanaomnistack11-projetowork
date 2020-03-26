@@ -1,4 +1,4 @@
-
+//criando as tabelas com migrations do KNEX
 exports.up = function(knex) {
   return knex.schema.createTable('ongs', function (table) {
     table.string('id').primary();
@@ -13,3 +13,5 @@ exports.up = function(knex) {
 exports.down = function(knex) {
  return knex.schema.dropTable('ongs');  
 };
+
+//npx knex migrate: latest => PRA EXECUTAR AS MIGRATIONS

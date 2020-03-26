@@ -1,4 +1,4 @@
-const crypto = require('crypto');
+const crypto = require('crypto'); /**importando o pacote crypto */
 const connection = require('../database/connection');
 
 
@@ -12,7 +12,7 @@ module.exports = {
     async create(request, response) {
         const { name , email, whatsapp, city, uf } = request.body;
 
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = crypto.randomBytes(4).toString('HEX'); /**gerando a id, string aleatoria e convertendo em hexadecimal*/
 
         await connection('ongs').insert({
             id,
