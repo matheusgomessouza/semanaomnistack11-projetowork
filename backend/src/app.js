@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const { errors } = require('celebrate');
 const routes = require('./routes'); /**IMPORTANDO AS ROTAS "./routes" */
 
 const app = express(); /**Framework para lidar com rotas dentro da aplicação */
@@ -7,8 +8,9 @@ const app = express(); /**Framework para lidar com rotas dentro da aplicação *
 app.use(cors()); /**Módulo de segurança */
 app.use(express.json()); /**Informar que estaremso utilizando o formato JSON para o corpo das requisições*/
 app.use(routes);
+app.use(errors());
 
-app.listen(3333);
+module.exports = app;
 
 /**
  * Rota: endereço URl completo
